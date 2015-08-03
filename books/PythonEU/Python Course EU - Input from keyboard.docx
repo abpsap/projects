@@ -1,0 +1,50 @@
+﻿Input from Keyboard
+The input Function
+ There are hardly any programs without any input. Input can come in various ways, for example from a database, another computer, mouse clicks and movements or from the internet. Yet, in most cases the input stems from the keyboard. For this purpose, Python provides the function input(). input has an optional parameter, which is the prompt string. 
+
+If the input function is called, the program flow will be stopped until the user has given an input and has ended the input with the return key. The text of the optional parameter, i.e. the prompt, will be printed on the screen. 
+
+The input of the user will be returned as a string without any changes. If this raw input has to be transformed into another data type needed by the algorithm, we can use either a casting function or the eval function. 
+
+Let's have a look at the following example: 
+name = input("What's your name? ")
+print("Nice to meet you " + name + "!")
+age = input("Your age? ")
+print("So, you are are already " + age + " years old, " + name + "!")
+
+We save the program as "input_test.py" and run it: 
+$ python input_test.py 
+What's your name? "Frank"
+Nice to meet you Frank!
+Your age? 42
+So, you are are already 42 years old, Frank!
+
+We will further experiment with the input function in the following interactive Python session: 
+>>> cities_canada = input("Largest cities in Canada: ")
+Largest cities in Canada: ["Toronto", "Montreal", "Calgara", "Ottawa"]
+>>> print(cities_canada, type(cities_canada))
+["Toronto", "Montreal", "Calgara", "Ottawa"] <class 'str'>
+>>> 
+>>> cities_canada = eval(input("Largest cities in Canada: "))
+Largest cities in Canada: ["Toronto", "Montreal", "Calgara", "Ottawa"]
+>>> print(cities_canada, type(cities_canada))
+['Toronto', 'Montreal', 'Calgara', 'Ottawa'] <class 'list'>
+>>> 
+>>> population = input("Population of Toronto? ")
+Population of Toronto? 2615069
+>>> print(population, type(population))
+2615069 <class 'str'>
+>>> 
+>>> population = int(input("Population of Toronto? "))
+Population of Toronto? 2615069
+>>> print(population, type(population))
+2615069 <class 'int'>
+>>> 
+
+Differences to Python2
+The usage of input or better the implicit evaluation of the input has often lead to serious programming mistakes in the earlier Python versions, i.e. 2.x Therefore, there the input function behaves like the raw_input function from Python2. 
+
+The changes between the versions are illustrated in the following diagram: 
+
+ 
+
